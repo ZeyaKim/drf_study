@@ -10,3 +10,11 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     views = models.IntegerField(default=0)
     fav_count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "post"
+        verbose_name_plural = "posts"
